@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use "@angular/material" as mat;
+@use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,20 +12,20 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $ocean-green-palette: (
-  50: #e2efea,
-  100: #b6d8c9,
-  200: #86bea6,
-  300: #56a482,
-  400: #319167,
-  500: #0d7d4c,
-  600: #0b7545,
-  700: #096a3c,
-  800: #076033,
-  900: #034d24,
-  A100: #80ffae,
-  A200: #4dff8d,
-  A400: #1aff6d,
-  A700: #01ff5c,
+  50: #e0efec,
+  100: #b3d8d0,
+  200: #80beb1,
+  300: #4da491,
+  400: #26917a,
+  500: #007d62,
+  600: #00755a,
+  700: #006a50,
+  800: #006046,
+  900: #004d34,
+  A100: #80ffcd,
+  A200: #4dffb9,
+  A400: #1affa5,
+  A700: #01ff9b,
   contrast: (
     50: #000000,
     100: #000000,
@@ -45,25 +45,25 @@ $ocean-green-palette: (
 );
 
 $claret-palette: (
-  50: #f4e3e9,
-  100: #e3b9c7,
-  200: #d08aa2,
-  300: #bd5b7c,
-  400: #af3860,
-  500: #a11544,
-  600: #99123e,
-  700: #8f0f35,
-  800: #850c2d,
-  900: #74061f,
-  A100: #ffa3b3,
-  A200: #ff7088,
-  A400: #ff3d5e,
-  A700: #ff2449,
+  50: #f0e7e9,
+  100: #d9c2c9,
+  200: #c09aa5,
+  300: #a67280,
+  400: #935365,
+  500: #80354a,
+  600: #783043,
+  700: #6d283a,
+  800: #632232,
+  900: #501622,
+  A100: #ff8ca2,
+  A200: #ff5979,
+  A400: #ff264f,
+  A700: #ff0d3a,
   contrast: (
     50: #000000,
     100: #000000,
     200: #000000,
-    300: #ffffff,
+    300: #000000,
     400: #ffffff,
     500: #ffffff,
     600: #ffffff,
@@ -77,15 +77,8 @@ $claret-palette: (
   ),
 );
 
-$rental-products-manager-frontend-primary: mat.define-palette(
-  $ocean-green-palette
-);
-$rental-products-manager-frontend-accent: mat.define-palette(
-  $claret-palette,
-  A200,
-  A100,
-  A400
-);
+$rental-products-manager-frontend-primary: mat.define-palette($ocean-green-palette);
+$rental-products-manager-frontend-accent: mat.define-palette($claret-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $rental-products-manager-frontend-warn: mat.define-palette(mat.$red-palette);
@@ -115,5 +108,5 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
