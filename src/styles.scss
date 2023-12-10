@@ -1,1 +1,119 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ocean-green-palette: (
+  50: #e2efea,
+  100: #b6d8c9,
+  200: #86bea6,
+  300: #56a482,
+  400: #319167,
+  500: #0d7d4c,
+  600: #0b7545,
+  700: #096a3c,
+  800: #076033,
+  900: #034d24,
+  A100: #80ffae,
+  A200: #4dff8d,
+  A400: #1aff6d,
+  A700: #01ff5c,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$claret-palette: (
+  50: #f4e3e9,
+  100: #e3b9c7,
+  200: #d08aa2,
+  300: #bd5b7c,
+  400: #af3860,
+  500: #a11544,
+  600: #99123e,
+  700: #8f0f35,
+  800: #850c2d,
+  900: #74061f,
+  A100: #ffa3b3,
+  A200: #ff7088,
+  A400: #ff3d5e,
+  A700: #ff2449,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$rental-products-manager-frontend-primary: mat.define-palette(
+  $ocean-green-palette
+);
+$rental-products-manager-frontend-accent: mat.define-palette(
+  $claret-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$rental-products-manager-frontend-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$rental-products-manager-frontend-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $rental-products-manager-frontend-primary,
+      accent: $rental-products-manager-frontend-accent,
+      warn: $rental-products-manager-frontend-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($rental-products-manager-frontend-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
